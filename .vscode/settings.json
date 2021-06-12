@@ -1,0 +1,8 @@
+{
+  "files.associations": {
+    "*.md": "jekyll",
+    "*.markdown": "jekyll",
+    "*.html": "jekyll",
+    "*.liquid": "jekyll",
+  },
+}
