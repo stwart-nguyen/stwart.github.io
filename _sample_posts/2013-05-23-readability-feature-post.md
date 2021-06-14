@@ -5,9 +5,9 @@ excerpt: "Custom written post descriptions are the way to go... if you're not la
 categories: [paragraph, feature photo]
 comments: true
 image:
-  feature: /img/Blogging.json
-  credit: Greg Rakozy
-  creditlink: https://unsplash.com/photos/oMpAz-DN-9I
+  feature: img/pixeltrue/minimalistic-illustrations/Blogging.json
+  credit: pixeltrue minimalistic-illustrations
+  creditlink: https://www.pixeltrue.com/free-packs/minimalistic-illustrations#preview
   type: json_adobe_after_effect
 ---
 
