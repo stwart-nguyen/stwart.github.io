@@ -12,21 +12,23 @@
   {% assign image_url = tmp_image_url | strip_newlines | rstrip | lstrip %}
 
   <div id="{{ post_id }}" class="post-image-feature" style="max-height: 400px;">
-    {% if post.image.type == 'json_adobe_after_effect' %}
-      <div id='post-illustration'>
-        <script type="text/javascript">
-          lottie.loadAnimation({
-            container: document.getElementById("post-illustration"), // the dom element that will contain the animation
-            renderer: 'svg',
-            loop: true,
-            autoplay: true,
-            path: "{{ image_url }}" // the path to the animation json
-          });
-        </script>
-      </div>
-    {% else %}
-      <img src="{{ image_url }}" alt="{{ post.title | escape }} feature image">
-    {% endif %}
+    <a href="{{ site.url }}{{ post.url }}" class="post-title" title="{{ post.title | escape }}">
+      {% if post.image.type == 'json_adobe_after_effect' %}
+        <div id='post-illustration'>
+          <script type="text/javascript">
+            lottie.loadAnimation({
+              container: document.getElementById("post-illustration"), // the dom element that will contain the animation
+              renderer: 'svg',
+              loop: true,
+              autoplay: true,
+              path: "{{ image_url }}" // the path to the animation json
+            });
+          </script>
+        </div>
+      {% else %}
+        <img src="{{ image_url }}" alt="{{ post.title | escape }} feature image">
+      {% endif %}
+    </a>
 
     {% if post.image.credit %}
       <span class="image-credit">Photo Credit: <a href="{{ post.image.creditlink }}">{{ post.image.credit }}</a></span>
