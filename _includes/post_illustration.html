@@ -13,21 +13,23 @@
 
   <div id="{{ post_id }}" class="post-image-feature" style="max-height: 400px;">
     {% if post.image.type == 'json_adobe_after_effect' %}
-      <script type="text/javascript">
-        lottie.loadAnimation({
-          container: document.getElementById("{{ post_id }}"), // the dom element that will contain the animation
-          renderer: 'svg',
-          loop: true,
-          autoplay: true,
-          path: "{{ image_url }}" // the path to the animation json
-        });
-      </script>
+      <div id='post-illustration'>
+        <script type="text/javascript">
+          lottie.loadAnimation({
+            container: document.getElementById("post-illustration"), // the dom element that will contain the animation
+            renderer: 'svg',
+            loop: true,
+            autoplay: true,
+            path: "{{ image_url }}" // the path to the animation json
+          });
+        </script>
+      </div>
     {% else %}
       <img src="{{ image_url }}" alt="{{ post.title | escape }} feature image">
+    {% endif %}
 
-      {% if post.image.credit %}
-        <span class="image-credit">Photo Credit: <a href="{{ post.image.creditlink }}">{{ post.image.credit }}</a></span>
-      {% endif %}
+    {% if post.image.credit %}
+      <span class="image-credit">Photo Credit: <a href="{{ post.image.creditlink }}">{{ post.image.credit }}</a></span>
     {% endif %}
   </div><!-- /.image-wrap -->
 {% endif %}
