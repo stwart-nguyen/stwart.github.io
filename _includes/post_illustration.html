@@ -1,0 +1,33 @@
+{% assign post = include.post %}
+{% assign post_id = post.url | slugify %}
+
+{% if post.image.feature %}
+  {% capture tmp_image_url %}
+    {% if post.image.feature contains 'http' %}
+      {{ post.image.feature }}
+    {% else %}
+      {{ site.url }}/{{ post.image.feature }}
+    {% endif %}
+  {% endcapture %}
+  {% assign image_url = tmp_image_url | strip_newlines | rstrip | lstrip %}
+
+  <div id="{{ post_id }}" class="post-image-feature" style="max-height: 400px;">
+    {% if post.image.type == 'json_adobe_after_effect' %}
+      <script type="text/javascript">
+        lottie.loadAnimation({
+          container: document.getElementById("{{ post_id }}"), // the dom element that will contain the animation
+          renderer: 'svg',
+          loop: true,
+          autoplay: true,
+          path: "{{ image_url }}" // the path to the animation json
+        });
+      </script>
+    {% else %}
+      <img src="{{ image_url }}" alt="{{ post.title | escape }} feature image">
+
+      {% if post.image.credit %}
+        <span class="image-credit">Photo Credit: <a href="{{ post.image.creditlink }}">{{ post.image.credit }}</a></span>
+      {% endif %}
+    {% endif %}
+  </div><!-- /.image-wrap -->
+{% endif %}
