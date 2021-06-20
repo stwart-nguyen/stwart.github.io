@@ -23,7 +23,7 @@ function convertShallowObjectToQueryString(object) {
 
 function showTodayWord(wordObject) {
   var dailyEnglishElement = document.getElementById('daily-english');
-  
+
   if (!dailyEnglishElement) return;
 
   document.getElementById('daily-english__word').innerHTML = wordObject.word;
@@ -33,4 +33,6 @@ function showTodayWord(wordObject) {
   googleWordAnchor.innerHTML = 'Google it';
 
   document.getElementById('daily-english__description').innerHTML = wordObject.description || '';
+
+  $('.daily-englist__content').fadeIn(2000);
 }
