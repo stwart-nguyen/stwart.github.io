@@ -1,0 +1,24 @@
+<section class="post" id="daily-english">
+  <header class="post-header">
+    <p class="post-meta">
+      <span class="post-date">
+        {{ 'daily english' | upcase }}
+      </span>
+    </p>
+    <h4 id='daily-english__word'>
+      <a href="{{ site.url }}{{ post.url }}" class="post-title" title="{{ post.title | escape }}">{{ post.title }}</a>
+      {% if post.link %}
+      <a class="post-title-link" href="{{ post.link }}" target="_blank" title="{{ post.title | escape }}"><i class="fa fa-external-link"></i></a>
+      {% endif %}
+    </h4>
+  </header>
+
+  <div class="post-description" >
+    <p id='daily-english__description'>
+    </p>
+  </div>
+
+  <p>
+    <a href id='search-google' target='_blank'></a>
+  </p>
+</section>
