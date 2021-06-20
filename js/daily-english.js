@@ -34,5 +34,5 @@ function showTodayWord(wordObject) {
 
   document.getElementById('daily-english__description').innerHTML = wordObject.description || '';
 
-  $('.daily-englist__content').fadeIn(2000);
+  $(dailyEnglishElement).fadeIn(2000);
 }
