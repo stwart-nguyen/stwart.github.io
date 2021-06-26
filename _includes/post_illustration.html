@@ -12,11 +12,11 @@
   {% assign image_url = tmp_image_url | strip_newlines | rstrip | lstrip %}
 
   <div id="{{ post_id }}" class="post-image-feature">
-    <a href="{{ site.url }}{{ post.url }}" id='post-illustration' class="post-title" title="{{ post.title | escape }}" style="display: block; height: 400px;">
+    <a href="{{ site.url }}{{ post.url }}" id="image-{{ post_id }}" class="post-title" title="{{ post.title | escape }}" style="display: block; height: 400px;">
       {% if post.image.type == 'json_adobe_after_effect' %}
         <script type="text/javascript">
           lottie.loadAnimation({
-            container: document.getElementById("post-illustration"), // the dom element that will contain the animation
+            container: document.getElementById("image-{{ post_id }}"), // the dom element that will contain the animation
             renderer: 'svg',
             loop: true,
             autoplay: true,
